@@ -14,7 +14,14 @@
         @else
             <ul>
                 @foreach($messages as $message)
-                    <li>{{ $message->text }}</li>
+                    <li style="display: flex;
+                    @if ($message->subrayado=='si')
+                        text-decoration: underline black;
+                    @endif
+                    @if ($message->negrita=='si')
+                        font-weight: bold;
+                    @endif" 
+                    >{{ $message->text }} </li>
                 @endforeach
             </ul>
         @endif
